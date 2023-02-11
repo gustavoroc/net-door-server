@@ -1,7 +1,9 @@
 # NetDoor
 
 ### Summary
-- This is a real social network for chat. You create your account, if there is some door open, you enter and start chatting, or create yours and invite your friends.
+- This is a social network for chatting. 
+  You create your account, if there is some door open, you enter and start to chat,
+  or create yours and invite your friends.
 
 ### Stack
 - Server Side (backend)  : Javascript w/ NodeJS;

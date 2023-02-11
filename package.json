@@ -1,10 +1,10 @@
 {
-  "name": "net-door",
+  "name": "net-door-server",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "description": "This is a server-side social network for chatting",
+  "author": "Gustavo da Rocha Pereira",
+  "private": false,
+  "license": "MIT License",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
