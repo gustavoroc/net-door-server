@@ -21,3 +21,7 @@
 - Bootstrap 5
 - GraphQL
 - RabbitMQ
+
+### Diagrams:
+![Architecture](https://github.com/gustavoroc/net-door-server/blob/main/diagrams/arquitetura-netdoor.drawio.png)
+![Database Design](https://github.com/gustavoroc/net-door-server/blob/main/diagrams/database-design.png)
