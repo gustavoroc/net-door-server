@@ -24,7 +24,7 @@ describe('Door entity', () => {
 
     chat = new Chat(date, data, userId);
     user = new User(name, email, createdAt, id);
-    door = new Door();
+    door = new Door('teste');
   });
 
   it('Should accept and save users into the door', () => {

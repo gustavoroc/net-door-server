@@ -8,7 +8,12 @@ export class Door {
   private userObservers: Function[] = [];
   private conversationObservers: Function[] = [];
 
-  constructor(users?: User[], conversation?: Chat[]) {
+  constructor(
+    readonly name: string,
+    readonly createdAt = new Date(),
+    users?: User[],
+    conversation?: Chat[],
+  ) {
     users ? (this.users = users) : (this.users = []);
     conversation
       ? (this.conversation = conversation)
