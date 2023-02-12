@@ -7,4 +7,4 @@ import { DoorTypeORMRepository } from './door.typeorm.repository';
   imports: [DatabaseModule],
   providers: [...doorProviders, DoorTypeORMRepository],
 })
-export class PhotoModule {}
+export class TORMRepoModule {}

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PhotoModule } from './repositories/door/door.typeorm.module';
+import { TORMRepoModule } from './repositories/door/door.typeorm.module';
 
 @Module({
-  imports: [PhotoModule],
+  imports: [TORMRepoModule],
 })
 export class typeORMModule {}
