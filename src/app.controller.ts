@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { UserTypeORMRepository } from './repository/typeORM/repositories/user.typeorm.repository';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private userRepository: UserTypeORMRepository) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getHello() {
+    const allRegisters = await this.userRepository.findAll();
+    return allRegisters;
   }
 }
