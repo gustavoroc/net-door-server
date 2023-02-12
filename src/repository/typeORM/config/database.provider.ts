@@ -1,4 +1,7 @@
 import { DataSource } from 'typeorm';
+import { TORMEntityChat } from '../entities/chat.typeorm.entity';
+import { TORMEntityDoor } from '../entities/door.typeorm.entity';
+import { TORMEntityUser } from '../entities/user.typeorm.entity';
 
 export const databaseProviders = [
   {
@@ -11,7 +14,7 @@ export const databaseProviders = [
         username: 'postgres',
         password: 'postgrespw',
         database: 'netdoor',
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [TORMEntityChat, TORMEntityDoor, TORMEntityUser],
         synchronize: true,
       });
 
