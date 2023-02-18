@@ -16,7 +16,7 @@ describe('User entity', () => {
       '4aada60e-aa28-11ed-afa1-0242ac120002',
     );
 
-    door = new Door();
+    door = new Door('Porta-Teste', new Date(), [], []);
 
     for (var i = 0; i < 5; i++) {
       const name = faker.name.firstName();
