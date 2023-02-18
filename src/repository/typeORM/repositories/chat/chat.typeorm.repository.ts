@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IDoorRepository } from 'src/interfaces/door-repository.interface';
 import { Repository } from 'typeorm';
-import { TORMEntityChat } from '../entities/chat.typeorm.entity';
+import { TORMEntityChat } from '../../entities/chat.typeorm.entity';
 
 @Injectable()
 export class ChatTypeORMRepository implements IDoorRepository {
