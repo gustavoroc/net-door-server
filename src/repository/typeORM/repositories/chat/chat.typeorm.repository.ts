@@ -11,6 +11,8 @@ export class ChatTypeORMRepository implements IDoorRepository {
   ) {}
 
   async findAll(): Promise<TORMEntityChat[]> {
-    return this.chatRepository.find();
+    return this.chatRepository.find({
+      relations: ['user', 'door'],
+    });
   }
 }
