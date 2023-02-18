@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { TORMProvidersModule } from '../providers/providers.module';
 import { ChatTypeORMRepository } from './chat/chat.typeorm.repository';
 import { DoorTypeORMRepository } from './door.typeorm.repository';
 import { UserTypeORMRepository } from './user.typeorm.repository';
+import { TORMProvidersModule } from '../typeORM/providers/providers.module';
 
 @Module({
   imports: [TORMProvidersModule],

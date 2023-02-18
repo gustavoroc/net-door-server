@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IUserRepository } from 'src/interfaces/user-repository.interface';
 import { Repository } from 'typeorm';
-import { TORMEntityUser } from '../entities/user.typeorm.entity';
+import { TORMEntityUser } from '../typeORM/entities/user.typeorm.entity';
 
 @Injectable()
 export class UserTypeORMRepository implements IUserRepository {
