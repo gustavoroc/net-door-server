@@ -1,11 +1,9 @@
 export class ChatDTO {
-  date?: Date;
   data: string;
   id: string;
   createdAt: Date;
 
-  constructor(date: Date, data: string, id: string, createdAt: Date) {
-    this.date = date;
+  constructor(data: string, id: string, createdAt: Date) {
     this.data = data;
     this.id = id;
     this.createdAt = createdAt;

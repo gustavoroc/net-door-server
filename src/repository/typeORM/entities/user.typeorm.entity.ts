@@ -3,6 +3,12 @@ import { TORMEntityChat } from './chat.typeorm.entity';
 
 @Entity()
 export class TORMEntityUser {
+  constructor(name: string, email: string, date: Date) {
+    this.name = name;
+    this.email = email;
+    this.createdAt = date;
+  }
+
   @PrimaryGeneratedColumn()
   id: number;
 

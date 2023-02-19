@@ -1,12 +1,9 @@
-import { DatabaseModule } from 'src/repository/typeORM/dbconfig/database.module';
-import { chatProviders } from 'src/repository/typeORM/providers/chat.typeorm.provider';
-import { TORMEntityChat } from 'src/repository/typeORM/entities/chat.typeorm.entity';
-
 import { ChatTypeORMRepository } from './chat.typeorm.repository';
 
 import { Test, TestingModule } from '@nestjs/testing';
-
-import { faker } from '@faker-js/faker';
+import { mocked_dtos } from 'src/dtos/test/mocked-dtos.mock';
+import { DatabaseModule } from 'src/repository/typeORM/dbconfig/database.module';
+import { chatProviders } from 'src/repository/typeORM/providers/chat.typeorm.provider';
 
 describe('ChatTypeORMRepository', () => {
   let chatRepository: ChatTypeORMRepository;
@@ -29,7 +26,15 @@ describe('ChatTypeORMRepository', () => {
     await module.get('TORM_CHAT_REPOSITORY').clear();
   });
 
-  it('Should create a chat into the database', () => {});
+  it('Should create a chat into the database', async () => {
+    const chat = mocked_dtos['chat'];
+    const user = mocked_dtos['user'];
+    const door = mocked_dtos['door'];
+
+    const createdChat = await chatRepository.addChat(chat, user.id, door.id);
+
+    expect(createdChat.id).toBe(chat.id);
+  });
 
   it('Should bring all the chats with the relationship with users and doors', async () => {
     const chats = await chatRepository.findAll();
