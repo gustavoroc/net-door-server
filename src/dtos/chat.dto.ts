@@ -1,11 +1,12 @@
-export class ChatDTO {
-  data: string;
-  id: string;
-  createdAt: Date;
+import { DoorDTO } from './door.dto';
+import { UserDTO } from './user.dto';
 
-  constructor(data: string, id: string, createdAt: Date) {
-    this.data = data;
-    this.id = id;
-    this.createdAt = createdAt;
-  }
+export class ChatDTO {
+  constructor(
+    private data: string,
+    private id: string,
+    private createdAt: Date,
+    private owner: UserDTO,
+    private door: DoorDTO,
+  ) {}
 }

@@ -3,14 +3,15 @@ import { TORMEntityChat } from './chat.typeorm.entity';
 
 @Entity()
 export class TORMEntityUser {
-  constructor(name: string, email: string, date: Date) {
+  constructor(name: string, email: string, createdAt: Date, password: string) {
     this.name = name;
     this.email = email;
-    this.createdAt = date;
+    this.createdAt = createdAt;
+    this.password = password;
   }
 
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column()
   name: string;
@@ -19,8 +20,13 @@ export class TORMEntityUser {
   email: string;
 
   @Column()
+  password: string;
+
+  @Column()
   createdAt: Date;
 
-  @OneToMany(() => TORMEntityChat, (chat) => chat.user)
+  @OneToMany(() => TORMEntityChat, (chat) => chat.user, {
+    onDelete: 'CASCADE',
+  })
   chats: TORMEntityChat[];
 }

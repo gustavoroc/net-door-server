@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { ChatTypeORMRepository } from './chat/chat.typeorm.repository';
+import { ChatTypeORMRepository } from './chat.typeorm.repository';
 import { DoorTypeORMRepository } from './door.typeorm.repository';
-import { UserTypeORMRepository } from './user.typeorm.repository';
+import { UserTypeORMRepository } from './user/user.typeorm.repository';
 import { TORMProvidersModule } from '../typeORM/providers/providers.module';
 
 @Module({

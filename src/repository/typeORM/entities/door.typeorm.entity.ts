@@ -12,7 +12,7 @@ import { TORMEntityUser } from './user.typeorm.entity';
 @Entity()
 export class TORMEntityDoor {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column()
   name: string;
@@ -20,10 +20,14 @@ export class TORMEntityDoor {
   @Column()
   createdAt: Date;
 
-  @ManyToMany(() => TORMEntityUser)
+  @ManyToMany(() => TORMEntityUser, {
+    onDelete: 'CASCADE',
+  })
   @JoinTable()
   users: TORMEntityUser[];
 
-  @OneToMany(() => TORMEntityChat, (chat) => chat.door)
+  @OneToMany(() => TORMEntityChat, (chat) => chat.door, {
+    onDelete: 'CASCADE',
+  })
   chats: TORMEntityChat[];
 }

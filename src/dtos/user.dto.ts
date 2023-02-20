@@ -1,13 +1,14 @@
-export class UserDTO {
-  name: string;
-  email: string;
-  id: string;
-  createdAt: Date;
+import { ChatDTO } from './chat.dto';
+import { DoorDTO } from './door.dto';
 
-  constructor(name: string, email: string, id: string, createdAt: Date) {
-    this.name = name;
-    this.email = email;
-    this.id = id;
-    this.createdAt = createdAt;
-  }
+export class UserDTO {
+  constructor(
+    public name: string,
+    public email: string,
+    public id: string,
+    public password: string,
+    public createdAt: Date,
+    public doors?: DoorDTO[],
+    public chats?: ChatDTO[],
+  ) {}
 }

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TORMModule } from './repository/typeORM/typeorm.module';
+import { TORMRepoModule } from './repository/repositories/repositories.module';
 
 @Module({
-  imports: [TORMModule],
+  imports: [TORMRepoModule],
   controllers: [AppController],
   providers: [],
 })
