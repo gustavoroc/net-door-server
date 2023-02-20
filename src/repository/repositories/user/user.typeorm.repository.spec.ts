@@ -4,8 +4,8 @@ import { DatabaseModule } from '../../../repository/typeORM/dbconfig/database.mo
 import { TORMEntityUser } from '../../../repository/typeORM/entities/user.typeorm.entity';
 import { userProviders } from '../../../repository/typeORM/providers/user.typeorm.provider';
 import { Repository } from 'typeorm';
-import { credentials, user } from '../../../dtos/test/mocked-dtos.mock';
-import { CredentialsDTO } from 'src/dtos/credentials.dto';
+import { user } from '../../../dtos/test/mocked-dtos.mock';
+import { CredentialsDTO } from '../../../dtos/credentials.dto';
 
 describe('UserTypeORMRepository', () => {
   let userRepository: UserTypeORMRepository;
@@ -49,6 +49,6 @@ describe('UserTypeORMRepository', () => {
     await userRepository.createUser(_user);
     const queryState = await userRepository.checkPassword(_credentials);
 
-    expect(queryState).toBe(_user);
+    expect({ ...queryState, id: '00' }).toStrictEqual({ ..._user, id: '00' });
   });
 });
