@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IUserRepository } from 'src/interfaces/user-repository.interface';
+import { IUserRepository } from '../../../interfaces/user-repository.interface';
 import { Repository } from 'typeorm';
 import { TORMEntityUser } from '../../typeORM/entities/user.typeorm.entity';
-import { UserDTO } from 'src/dtos/user.dto';
+import { UserDTO } from '../../../dtos/user.dto';
+import { CredentialsDTO } from '../../../dtos/credentials.dto';
 
 @Injectable()
 export class UserTypeORMRepository implements IUserRepository {
@@ -38,5 +39,17 @@ export class UserTypeORMRepository implements IUserRepository {
     );
   }
 
-  async 
+  async checkPassword(credentials: CredentialsDTO) {
+    const user = await this.userRepository.findOneBy({
+      ...credentials,
+    });
+
+    return new UserDTO(
+      user.name,
+      user.email,
+      user.id,
+      user.password,
+      user.createdAt,
+    );
+  }
 }
