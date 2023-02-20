@@ -6,7 +6,7 @@ export class DoorDTO {
     public name: string,
     public id: string,
     public createdAt: Date,
-    private users?: UserDTO[],
+    public users?: UserDTO[],
     public conversations?: UserDTO[],
   ) {}
 }

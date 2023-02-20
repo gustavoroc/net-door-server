@@ -26,4 +26,13 @@ export class User {
   public getDoors(): Door[] {
     return this.doors;
   }
+
+  public getUserInformation() {
+    return {
+      name: this.name,
+      email: this.email,
+      createdAt: this.createdAt,
+      id: this.id,
+    };
+  }
 }
