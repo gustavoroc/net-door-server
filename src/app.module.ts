@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TORMRepoModule } from './repository/repositories/repositories.module';
+import { UserOrchestratorModule } from './orchestrator/user/user.orchestrator.module';
 
 @Module({
-  imports: [TORMRepoModule],
+  imports: [UserOrchestratorModule],
   controllers: [AppController],
   providers: [],
 })
